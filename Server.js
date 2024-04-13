@@ -8,23 +8,10 @@ const routes = require("./routes/index.js");
 app.use(express.json());
 app.use(cors())
 
-const db = mysql.createConnection({
-    host:"sql6.freesqldatabase.com",
-    user:"sql6696255",
-    password:"QKCVPC7WmM",
-    database: "sql6696255"
-})
 
 // console.log("two")
 app.use("/api", routes);
  
-app.get("/users",(req,res)=>{
-    const sql = "Select * from Employee";
-    db.query(sql, (err, data) => {
-        if(err) return res.json(err);
-        return res.json(data);
-    })
-})
 
 app.get("/",(req,res)=> {
     return res.json("Backend File")

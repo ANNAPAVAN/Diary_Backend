@@ -76,7 +76,7 @@ const verifyToken = async (req,res) => {
         return res.json({ status: "verified", email });
     } catch (err) {
         // If token is invalid, catch the error and return "token invalid"
-        console.error("Token verification failed:", err);
+        // console.error("Token verification failed:", err);
         res.json({ status: "invalid" });
     }
 };

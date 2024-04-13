@@ -28,8 +28,8 @@ const mongoAddDiary = async (req, res) => {
     const todayDate = new Date().toLocaleDateString('en-IN', { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Asia/Kolkata' }).split('/').reverse().join('-');
 
 
-    const date = Diary.find({todayDate});
-    if(date){
+    const check = Diary.findOne({userMail,todayDate});
+    if(!check){
         return res.json({status:"submitted"});
     }
 

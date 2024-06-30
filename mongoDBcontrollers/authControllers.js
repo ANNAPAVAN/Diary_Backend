@@ -29,7 +29,7 @@ const mongoSignUp = async (req,res) => {
 
 const mongoLogin = async (req,res) => {
     const {email,password} = req.body;
-    console.log(email)
+    // console.log(email)
     try{
         const user = await User.findOne({ email }); 
         if (!user) {
